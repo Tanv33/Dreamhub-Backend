@@ -8,6 +8,7 @@ const createNft = require("./mint-nft");
 const UpdateNft = require("./update-nft");
 const getNftByTag = require("./get-nft-by-tag-name");
 const { tokenVerification } = require("../../../middleware");
+const getSingleNft = require("./get-single-nft");
 
 const router = express.Router();
 
@@ -21,6 +22,7 @@ router.get("/get-all", getAllNft);
 router.get("/user-collected-nfts/:id", getCollectedNfts);
 router.get("/user-created-nfts/:id", getCreatedNfts);
 router.put("/update", UpdateNft);
+router.get("/get-single-nft/:id", getSingleNft);
 // router.get("/nft-view-image/:filename", nftViewImage);
 // DB Query
 router.get("/get-nft-by-tag", getNftByTag);
